@@ -1,5 +1,5 @@
 # Weekly
-Automate weekly matter.
+Automate weekly work.
 
 # Inclusion
 1. Attendee List
