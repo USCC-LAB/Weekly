@@ -4,8 +4,8 @@ class smtp:
     # smtp_obj =
 
     def __init__(self, *argv):
-        if None != argv:
-            self.smtp_obj = smtplib.SMTP_SSL(argv)
+        if () != argv:
+            self.smtp_obj = smtplib.SMTP_SSL(*argv)
         else:
             self.smtp_obj = self.default_setup()
 
