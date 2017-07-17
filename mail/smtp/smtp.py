@@ -17,7 +17,7 @@ class smtp:
         self.smtp_obj.login(account, passwd)
 
     def send(self, frm, to, subject, content):
-        self.smtp_obj.sendmail(frm, to, subject + '\n' + content)
+        self.smtp_obj.sendmail(frm, to, 'Subject:' + subject + '\n' + content)
 
     def quit(self):
         self.smtp_obj.quit()
