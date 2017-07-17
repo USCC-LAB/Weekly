@@ -6,7 +6,7 @@ class mail:
         self.prot.login(account, passwd)
 
     def send(self, frm, to, subject, content):
-        self.prot.sendmail(frm, to, subject, content)
+        self.prot.send(frm, to, subject, content)
 
     def quit(self):
         self.prot.quit()
