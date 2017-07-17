@@ -1,0 +1,2 @@
+# Weekly
+Automate weekly matter.
