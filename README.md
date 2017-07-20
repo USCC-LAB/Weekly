@@ -18,3 +18,7 @@ It's implemented via gmail with smtp protocol.
 
 # Downloader
 A download mechanism for various source. Moreover, It supports Google Drive.
+
+# Unittest
+Execute test suites via:
+`python -m unittest -v tests.XXX_test`
