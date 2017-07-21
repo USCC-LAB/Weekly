@@ -1,16 +1,20 @@
 from mail import mail
 from mail.smtp import smtp
 
-def smtp_dummy(acnt, pswd):
+def smtp_dummy(acnt, pswd, attachments):
     frm = acnt
-    to = acnt
-    
-    Mail = mail.mail(smtp.smtp)
-    
-    Mail.login(acnt, pswd)
-    
-    Mail.send(frm, to, 'Dummy mail from USCC LAB', 'Hello members : )')
-    
-    Mail.quit()
+    to = [acnt]
+
+    myMail = mail.mail(smtp.smtp)
+    myMail.login(acnt, pswd)
+
+    attachments = []
+    if () != attachments:
+        myMail.send_with_attachment(frm, to, 'Dummy mail from USCC LAB', 
+                                    'Hello members : )', attachments)
+    else:
+        myMail.send(frm, to, 'Dummy mail from USCC LAB', 'Hello members : )')
+
+    myMail.quit()
 
     return 0
