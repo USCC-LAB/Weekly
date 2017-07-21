@@ -1,6 +1,9 @@
 # Weekly
 Automate weekly work.
 
+# Requirement
+1. Python3
+
 # Inclusion
 1. Attendee List
 2. Announcement
