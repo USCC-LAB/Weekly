@@ -10,7 +10,6 @@ from datetime import date
 class smtp:
     """Send email via smtp"""
     def __init__(self, *argv):
-        print(*argv)
         if () != argv:
             self.smtp_obj = smtplib.SMTP_SSL(*argv)
         else:
@@ -21,7 +20,6 @@ class smtp:
 
     def login(self, account, passwd):
         try:
-            # self.smtp_obj.starttls()
             self.smtp_obj.login(account, passwd)
             print ('Login success')
         except:
