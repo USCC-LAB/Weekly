@@ -6,15 +6,10 @@ def smtp_dummy(acnt, pswd, attachments):
     to = [acnt]
 
     myMail = mail.mail(smtp.smtp)
+
     myMail.login(acnt, pswd)
-
-    attachments = []
-    if () != attachments:
-        myMail.send_with_attachment(frm, to, 'Dummy mail from USCC LAB', 
-                                    'Hello members : )', attachments)
-    else:
-        myMail.send(frm, to, 'Dummy mail from USCC LAB', 'Hello members : )')
-
+    myMail.send(frm, to, 'Dummy mail from USCC LAB', 'Hello members : )', attachments)
+    
     myMail.quit()
 
     return 0

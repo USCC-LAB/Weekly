@@ -8,9 +8,7 @@ class mail_testcase(unittest.TestCase):
         assert account != ''
         assert password != ''
         attachments = []
-        if len(sys.argv) > 3:
-            for i in range(3, len(sys.argv)):
-                attachments.append(sys.argv[i])
+
         self.args = (account, password, attachments)
 
     def tearDown(self):
