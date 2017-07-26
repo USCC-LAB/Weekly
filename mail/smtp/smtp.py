@@ -25,7 +25,7 @@ class smtp:
         except:
             print ('Login Error: ', sys.exc_info()[0])
 
-    def send(self, frm, to, subject, content):
+    def send(self, frm, to, subject, content, *attachments):
         # render msg
         msg = MIMEMultipart()
         msg['Subject'] = subject
@@ -34,11 +34,23 @@ class smtp:
         msg['From'] = frm
         msg.attach(MIMEText(content))
 
+        for attachment in attachments:
+            try:
+                with open(attachment, 'rb') as fp:
+                    file = MIMEBase('application', "octet-stream")
+                    file.set_payload(fp.read())
+                encoders.encode_base64(file)
+                file.add_header('Content-Disposition', 'attachment',
+                filename=os.path.basename(attachment))
+                msg.attach(file)
+            except:
+                print("Unable to open one of the attachments. Error: ", sys.exc_info()[0])
+                raise
         try:
             self.smtp_obj.sendmail(frm, to, msg.as_string())
             print ('Send email success.')
         except:
-            print ('Send Error: ', sys.exc_info()[0])
+            print ('Send email Error: ', sys.exc_info()[0])
 
     def send_with_attachment(self, frm, to, subject, content, attachments):
         # render msg
