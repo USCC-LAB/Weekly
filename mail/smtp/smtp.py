@@ -47,6 +47,7 @@ class smtp:
         except:
             print ('Send email Error: ', sys.exc_info()[0])
 
+<<<<<<< HEAD
     def send_with_attachment(self, frm, to, subject, content, attachments):
         # render msg
         msg = MIMEMultipart()
@@ -75,5 +76,7 @@ class smtp:
             print ('Send with attachment Error: ', sys.exc_info()[0])
 >>>>>>> d3c9f75... Simplify send function and delete duplicate code
 
+=======
+>>>>>>> e7dcf6e... Simplify send function and delete duplicate code
     def quit(self):
         self.smtp_obj.quit()
