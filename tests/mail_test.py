@@ -7,7 +7,19 @@ class mail_testcase(unittest.TestCase):
         password = ''
         assert account != ''
         assert password != ''
+<<<<<<< HEAD
+<<<<<<< HEAD
         self.args = (account, password)
+=======
+        attachments = []
+
+        self.args = (account, password, attachments)
+>>>>>>> 289654f... Modify unittest function
+=======
+        attachments = []
+
+        self.args = (account, password, attachments)
+>>>>>>> origin/dev
 
     def tearDown(self):
         self.args = None
