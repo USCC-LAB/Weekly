@@ -1,17 +1,12 @@
 import smtplib
+from prot import Prot
 
-class Smtp:
-    # smtp_obj =
 
-    def __init__(self, *argv):
-        if () != argv:
-            self.smtp_obj = smtplib.SMTP_SSL(*argv)
-        else:
-            self.smtp_obj = self.default_setup()
+class Smtp(Prot):
 
-    # Set Gmail server as default
-    def default_setup(self):
-        return smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    def __init__(self, host='smtp.gmail.com', port=465):
+        self.smtp_obj = smtplib.SMTP_SSL(host, port)
+
 
     def login(self, account, passwd):
         self.smtp_obj.login(account, passwd)
