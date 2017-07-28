@@ -5,9 +5,10 @@ class mail_testcase(unittest.TestCase):
     def setUp(self):
         account = ''
         password = ''
+        attachments = ''
         assert account != ''
         assert password != ''
-        self.args = (account, password)
+        self.args = (account, password, attachments)
 
     def tearDown(self):
         self.args = None
