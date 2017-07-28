@@ -1,4 +1,4 @@
-class mail:
+class Mail:
     def __init__(self, prot, *argv):
         self.prot = prot(*argv)
 
