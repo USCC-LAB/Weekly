@@ -1,6 +1,6 @@
 import smtplib
 
-class smtp:
+class Smtp:
     # smtp_obj =
 
     def __init__(self, *argv):

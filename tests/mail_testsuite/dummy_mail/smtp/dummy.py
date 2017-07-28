@@ -5,7 +5,7 @@ def smtp_dummy(acnt, pswd):
     frm = acnt
     to = acnt
     
-    Mail = mail.mail(smtp.smtp)
+    Mail = mail.Mail(smtp.Smtp)
     
     Mail.login(acnt, pswd)
     
