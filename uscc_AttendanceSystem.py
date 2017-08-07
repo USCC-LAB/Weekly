@@ -52,7 +52,7 @@ COMMAND = cmdMap.get(cmd, cmd)
 ## member dictionary
 member = {}
 
-def member():
+def getMemberDictionary():
 
 	global member
 	member = {}
@@ -95,7 +95,7 @@ class getuidObserver(CardObserver):
 
 ## main
 
-member()
+getMemberDictionary()
 
 if type(COMMAND) == list:
 	connection = reader.createConnection()
