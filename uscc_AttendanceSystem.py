@@ -63,34 +63,29 @@ def getMemberDictionary():
 ##getuid
 
 class getuidObserver(CardObserver):
-    """A simple card observer that is notified
-    when cards are inserted/removed from the system and
-    prints the list of cards
-    """
+	
+	def __init__(self):
+		self.observer = ConsoleCardConnectionObserver()
 
-    def __init__(self):
-        self.observer = ConsoleCardConnectionObserver()
-       	self.log = open('log.txt', 'a')
+	def update(self, observable, actions):
+		(addedcards, removedcards) = actions
+		GETUID = [0xFF, 0xCA, 0x00, 0x00, 0x00]
 
-    def update(self, observable, actions):
-        (addedcards, removedcards) = actions
-        
-        GETUID = [0xFF, 0xCA, 0x00, 0x00, 0x00]
+		if addedcards:
+			print ('Now at ' + datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
+		for card in addedcards:
+			card.connection = card.createConnection()
+			card.connection.connect()
+			response, sw1, sw2 = card.connection.transmit(GETUID)
 
-        if addedcards:
-        	print ('Now at ' + datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-
-        for card in addedcards:
-            card.connection = card.createConnection()
-            card.connection.connect()
-            response, sw1, sw2 = card.connection.transmit(GETUID)
-            
-            if toHexString(response) in member:
-            	print(member[toHexString(response)] + ', have a nice day.\n')
-            	self.log.write(datetime.now().strftime("%Y-%m-%d %H:%M:%S")+' - '+ member[toHexString(response)] +'\n')
-            else:
-            	print('Who are you!!!!\n')
+			if toHexString(response) in member:
+				self.log = open('log.txt', 'a')
+				print(member[toHexString(response)] + ', have a nice day.\n')
+				self.log.write((datetime.now().strftime("%Y-%m-%d %H:%M:%S")+' - '+ member[toHexString(response)] +'\n'))
+				self.log.close()
+			else:
+				print('Who are you!!!!\n')
 
 
 ## main
