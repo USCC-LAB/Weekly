@@ -11,13 +11,13 @@ import sys
 
 # user interface alert 
 if len(sys.argv) < 2:
-	print "usage: ./uscc_AttendanceSystem.py <command>\nList of available commands: help, start, getuid, mute, unmute."
+	print ("usage: ./uscc_AttendanceSystem.py <command>\nList of available commands: help, start, getuid, mute, unmute.")
 	sys.exit()
 
 # device checkout
 r = readers()
 if len(r) < 1:
-	print "error: No readers available!"
+	print ("error: No readers available!")
 	sys.exit()
 reader = r[0]
 
@@ -29,13 +29,13 @@ print "Using: ", reader'''
 cmd = sys.argv[1]
 
 if cmd == "help":
-	print "usage: uscc_AttendanceSystem.py <command>\nList of available commands: help, start, getuid, mute, unmute."
-	print "Before executing command, make sure that \"member.txt\" has been sign in."
-	print "\thelp\tShow this help page"
-	print "\tstart\tStart running USCC Attendence System."
-	print "\tmute\tDisable beep sound when card is tagged."
-	print "\tunmute\tEnable beep sound when card is tagged."
-	print "\tgetuid\tPrint UID of the tagged card."
+	print ("usage: uscc_AttendanceSystem.py <command>\nList of available commands: help, start, getuid, mute, unmute.")
+	print ("Before executing command, make sure that \"member.txt\" has been sign in.")
+	print ("\thelp\tShow this help page")
+	print ("\tstart\tStart running USCC Attendence System.")
+	print ("\tmute\tDisable beep sound when card is tagged.")
+	print ("\tunmute\tEnable beep sound when card is tagged.")
+	print ("\tgetuid\tPrint UID of the tagged card.")
 	sys.exit()
 
 
@@ -103,26 +103,26 @@ if type(COMMAND) == list:
 	data, sw1, sw2 = connection.transmit(COMMAND)
 	
 	if data:
-		print cmd + ": " + toHexString(data)
+		print (cmd + ": " + toHexString(data))
 
 	if (sw1, sw2) == (0x90, 0x0):
-		print "Status: The operation completed successfully."
+		print ("Status: The operation completed successfully.")
 	elif (sw1, sw2) == (0x63, 0x0):
-		print "Status: The operation failed."
+		print ("Status: The operation failed.")
 
 elif type(COMMAND) == str:
 	if COMMAND == "start":
 		print("Welcom to USCC Attendance system.")
-    	print("Starting Device.")
-    	print("")
+		print("Starting Device.")
+		print("")
 
-    	cardmonitor = CardMonitor()
-    	selectobserver = getuidObserver()
-    	cardmonitor.addObserver(selectobserver)
+		cardmonitor = CardMonitor()
+		selectobserver = getuidObserver()
+		cardmonitor.addObserver(selectobserver)
 
-	while True:
-		pass
+		while True:
+			pass
 
-    	cardmonitor.deleteObserver(selectobserver)
+		cardmonitor.deleteObserver(selectobserver)
 
 
