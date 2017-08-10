@@ -1,4 +1,4 @@
-import sched, time, datetime
+import sched, time, datetime, threading
 
 class Scheduler:
     def __init__(self, timef = time.time, delayf = time.sleep):
@@ -26,5 +26,6 @@ class Scheduler:
     def run(self, blocking = True):
         self.sched_obj.run(blocking)
 
-    def daemon():
-        pass
+    def daemon(self, blocking = True):
+        thrd = threading.Thread(target=self.run, args = [blocking])
+        thrd.start()
