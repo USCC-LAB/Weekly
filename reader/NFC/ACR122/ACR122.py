@@ -6,11 +6,11 @@ from reader.NFC.ACR122 import uid
 
 class ACR122():
     def __init__(self, obs_impl = uid.ReadUidObserver):
-        self.monitor = CardMonitor()
-        self.observer = obs_impl() #XXX: Extend to mutiple observer
+        self.__monitor = CardMonitor()
+        self.__observer = obs_impl() #XXX: Extend to mutiple observer
 
     def attachObserver(self):
-        self.monitor.addObserver(self.observer)
+        self.__monitor.addObserver(self.__observer)
 
     def detachObserver(self):
-        self.monitor.deleteObserver(self.observer)
+        self.__monitor.deleteObserver(self.__observer)

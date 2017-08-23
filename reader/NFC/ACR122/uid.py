@@ -6,7 +6,7 @@ from reader import observer
 
 class ReadUidObserver(observer.GenericObserver):
     def __init__(self):
-        self.cards =[] # Inserted Card
+        self.__cards =[] # Inserted Card
 
     def readUid(self, card):
         # follow http://downloads.acs.com.hk/drivers/en/API-ACR122U-2.02.pdf
@@ -21,11 +21,11 @@ class ReadUidObserver(observer.GenericObserver):
 
     def insert_action(self, card):
         print('+Inserted: ', toHexString(card.atr))
-        if card not in self.cards:
-            self.cards += [card]
+        if card not in self.__cards:
+            self.__cards += [card]
             self.readUid(card)
 
     def remove_action(self, card):
         print('-Removed: ', toHexString(card.atr))
-        if card in self.cards:
-            self.cards.remove(card)
+        if card in self.__cards:
+            self.__cards.remove(card)
