@@ -3,10 +3,10 @@ class Roulette():
         self.setUp(policy, cands)
 
     def setUp(self, plcy = None, cands = None):
-        self.policy = plcy if plcy != None else self.policy
-        self.candidates = cands if cands != None else self.candidates
-        self.ptr = None
+        self.__policy = plcy if plcy != None else self.policy
+        self.__candidates = cands if cands != None else self.candidates
+        self.__ptr = None
 
     def lottery(self):
-        self.ptr = self.policy(self.ptr, self.candidates)
-        return self.ptr
+        self.__ptr = self.__policy(self.__ptr, self.__candidates)
+        return self.__ptr

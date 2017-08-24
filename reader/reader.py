@@ -2,10 +2,10 @@ from reader.NFC.ACR122 import ACR122
 
 class Reader:
     def __init__(self, dev = ACR122.ACR122):
-        self.dev = dev()
+        self.__dev = dev()
 
     def createObserver(self):
-        self.dev.attachObserver()
+        self.__dev.attachObserver()
     
     def removeObserver(self):
-        self.dev.detachObserver()
+        self.__dev.detachObserver()
