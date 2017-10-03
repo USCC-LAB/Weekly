@@ -2,6 +2,10 @@ import sched, time, datetime, threading
 
 class Scheduler:
     def __init__(self, timef = time.time, delayf = time.sleep):
+        # Declaration
+        self.__sched_obj = None
+        
+        # Initialization
         self.__sched_obj = sched.scheduler(timef, delayf)
 
     def show(self):
