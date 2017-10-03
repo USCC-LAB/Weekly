@@ -1,5 +1,5 @@
 import unittest
-from tests.mail_testsuite.dummy_mail.smtp.dummy import *
+from tests.mail_testsuite.dummy_mail.smtp_dummy import *
 
 class MailTestcase(unittest.TestCase):
     def setUp(self):
