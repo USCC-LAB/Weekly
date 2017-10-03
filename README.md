@@ -32,4 +32,4 @@ Please follow [PEP8](https://www.python.org/dev/peps/pep-0008/).
 
 # Contribution
 Contributing is welcome, please use GitHub issue and Pull Request to contribute!
-Notice that you should follow the `coding style` and send PR to `dev branch`.
+Notice that you should follow the `coding style` and send PR to `dev/master branch`.
