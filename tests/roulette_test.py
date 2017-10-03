@@ -1,5 +1,5 @@
 import unittest
-from tests.roulette_testsuite.person_on_duty import *
+from tests.testsuites.roulette.person_on_duty import *
 
 class RouletteTestcase(unittest.TestCase):
     def setUp(self):

@@ -1,5 +1,5 @@
 import unittest
-from tests.scheduler_testsuite.order import *
+from tests.testsuites.scheduler.order import *
 
 class SchedulerTestcase(unittest.TestCase):
     def setUp(self):
