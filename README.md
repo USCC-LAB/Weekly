@@ -23,10 +23,15 @@ It's implemented via gmail with smtp protocol.
 A download mechanism for various source. Moreover, It supports Google Drive.
 
 # Unittest
-Execute test suites via:
+Execute all the test suites via:
 ```shell=
-python -m unittest -v tests.XXX_test
+make check
 ```
+Execute particular test suites via:
+```shell=
+make XXX_test XXX_test ...
+```
+
 # Coding Style
 Please follow [PEP8](https://www.python.org/dev/peps/pep-0008/).
 
