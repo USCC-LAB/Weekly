@@ -1,5 +1,9 @@
 class Mail:
     def __init__(self, prot, *argv):
+        # Declaration
+        self.__prot = None
+
+        # Initialization
         self.__prot = prot(*argv)
 
     def login(self, account, passwd):
