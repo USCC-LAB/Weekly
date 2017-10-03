@@ -6,7 +6,11 @@ from reader import observer
 
 class ReadUidObserver(observer.GenericObserver):
     def __init__(self):
-        self.__cards =[] # Inserted Card
+        # Declaration
+        self.__cards = None # Inserted cards
+
+        # Initialization
+        self.__cards = [] 
 
     def readUid(self, card):
         # follow http://downloads.acs.com.hk/drivers/en/API-ACR122U-2.02.pdf
