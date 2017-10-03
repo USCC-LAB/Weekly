@@ -1,0 +1,17 @@
+sudo: enabled
+os: linux
+
+language: python
+python:
+  - "3.4"
+  - "3.5"
+  - "3.6"
+
+before_install: true # Skip this phase
+
+# command to install dependencies
+install: true
+#  - ./install-dependencies.sh
+
+script:
+  - python -m unittest -v tests.scheduler_test tests.roulette_test # tests.mail_test tests.reader_test
