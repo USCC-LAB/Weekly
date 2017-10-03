@@ -14,4 +14,4 @@ install: true
 #  - ./install-dependencies.sh
 
 script:
-  - python -m unittest -v tests.scheduler_test tests.roulette_test # tests.mail_test tests.reader_test
+  - make check
