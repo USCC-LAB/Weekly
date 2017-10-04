@@ -1,5 +1,5 @@
 import unittest
-from tests.reader_testsuite.uid.threaded import *
+from tests.testsuites.reader.uid.threaded import *
 
 from reader.NFC.ACR122.ACR122 import *
 

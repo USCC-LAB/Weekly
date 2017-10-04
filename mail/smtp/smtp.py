@@ -1,9 +1,11 @@
 import smtplib
 
 class Smtp:
-    # smtp_obj =
-
     def __init__(self, *argv):
+        # Declaration
+        self.__smtp_obj = None
+
+        # Initialization
         if () != argv:
             self.__smtp_obj = smtplib.SMTP_SSL(*argv)
         else:
