@@ -14,6 +14,7 @@ all:
 
 check:
 	$(PYTHON) -m unittest \
+		$(TEST).serialization_test \
 		$(TEST).scheduler_test \
 		$(TEST).roulette_test
 #		$(TEST).reader_test \
