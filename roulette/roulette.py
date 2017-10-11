@@ -8,9 +8,9 @@ class Roulette():
         # Initialization
         self.setUp(policy, cands)
 
-    def setUp(self, plcy = None, cands = None):
-        self.__policy = plcy if plcy != None else self.policy
-        self.__candidates = cands if cands != None else self.candidates
+    def setUp(self, plcy = None, cands = (None)):
+        self.__policy = plcy if plcy != None else self.__policy
+        self.__candidates = cands if cands != None else self.__candidates
         self.__ptr = None
 
     def lottery(self):
