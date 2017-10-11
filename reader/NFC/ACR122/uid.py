@@ -20,16 +20,16 @@ class ReadUidObserver(observer.GenericObserver):
         card.connection.connect()
 
         resp, sw1, sw2 = card.connection.transmit(GETDATA)
-        print(resp, "%.2x %.2x" %(sw1, sw2))
+        print('{0} {1:.2x} {2:.2x}'.format(resp, sw1, sw2))
 
 
     def insert_action(self, card):
-        print('+Inserted: ', toHexString(card.atr))
+        print('+Inserted: {0}'.format(toHexString(card.atr)))
         if card not in self.__cards:
             self.__cards += [card]
             self.readUid(card)
 
     def remove_action(self, card):
-        print('-Removed: ', toHexString(card.atr))
+        print('-Removed: {0}'.format(toHexString(card.atr)))
         if card in self.__cards:
             self.__cards.remove(card)

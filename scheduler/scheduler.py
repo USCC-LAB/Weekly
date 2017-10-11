@@ -10,9 +10,9 @@ class Scheduler:
 
     def show(self):
         print('*' * 20)
-        print('Total Event Number: %d\n' %len(self.__sched_obj.queue))
+        print('Total Event Number: {0:d}\n'.format(len(self.__sched_obj.queue)))
         for index, item in enumerate(self.__sched_obj.queue):
-            print('Event %d' %index, item)
+            print('Event {0:d} {1}'.format(index, item))
         print('*' * 20)
 
     # @instance: would be date or delta timesec
