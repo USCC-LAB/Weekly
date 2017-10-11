@@ -10,10 +10,10 @@ all:
 	true
 
 %_test:
-	$(PYTHON) -m unittest $(TEST).$@
+	$(PYTHON) -m -v unittest $(TEST).$@
 
 check:
-	$(PYTHON) -m unittest \
+	$(PYTHON) -m unittest -v \
 		$(TEST).scheduler_test \
 		$(TEST).roulette_test
 #		$(TEST).reader_test \
