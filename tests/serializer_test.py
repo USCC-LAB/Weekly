@@ -1,6 +1,6 @@
 import unittest
 import json
-from tests.testsuites.serialization.test_json import *
+from tests.testsuites.serializer.test_json import *
 
 
 class SerializationTestcase(unittest.TestCase):

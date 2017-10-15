@@ -1,5 +1,5 @@
-from serialization import serializer
-from serialization.json import json
+from serializer import serializer
+from serializer.json import json
 
 
 def json_serialize(dict_data):
