@@ -10,7 +10,7 @@ all:
 	true
 
 %_test:
-	$(PYTHON) -m -v unittest $(TEST).$@
+	$(PYTHON) -m unittest -v $(TEST).$@
 
 check:
 	$(PYTHON) -m unittest -v \
