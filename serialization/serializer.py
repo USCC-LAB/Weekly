@@ -7,4 +7,3 @@ class Serializer:
 
     def deserialize(self, data):
         return self.serialize_obj.deserialize(data)
-
