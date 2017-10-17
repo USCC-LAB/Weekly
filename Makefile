@@ -5,15 +5,22 @@ PYTHON=python3
 SCRIPTS=scripts
 TEST=tests
 
+# Control verbosity
+ifeq ("$(V)", "1")
+    Q :=
+else
+    Q := @
+endif
+
 # Rule
 all:
-	true
+	$(Q)true
 
 %_test:
-	$(PYTHON) -m unittest -v $(TEST).$@
+	$(Q)$(PYTHON) -m unittest -v $(TEST).$@
 
 check:
-	$(PYTHON) -m unittest -v \
+	$(Q)$(PYTHON) -m unittest -v \
 		$(TEST).serializer_test \
 		$(TEST).scheduler_test \
 		$(TEST).roulette_test
