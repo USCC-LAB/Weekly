@@ -10,3 +10,12 @@ def json_serialize(dict_data):
 
 def json_deserialize(raw_data):
     return Serializer.loads(raw_data)
+
+def json_write(path, dict_data):
+    return Serializer.write(path, dict_data)
+
+def json_read(path):
+    return Serializer.read(path)
+
+def json_append(path, dict_data):
+    return Serializer.append(path, dict_data)
