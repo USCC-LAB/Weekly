@@ -8,6 +8,9 @@ TEST = tests
 # Src
 SRCS = $(shell find -name "*.py")
 
+# System info
+NPROC = $(shell getconf _NPROCESSORS_ONLN)
+
 # Control verbosity
 ifeq ("$(V)", "1")
     Q :=
@@ -39,4 +42,4 @@ pep8stat:
 	$(Q)pep8 --statistic -qq $(SRCS)
 
 pep8replace:
-	$(Q)autopep8 --in-place --aggressive -a $(SRCS)
+	$(Q)autopep8 -j$(NPROC) --in-place --aggressive -a $(SRCS)
