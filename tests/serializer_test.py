@@ -1,5 +1,4 @@
 import unittest
-import json
 from tests.testsuites.serializer.test_json import *
 
 
