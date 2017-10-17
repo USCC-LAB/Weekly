@@ -35,6 +35,14 @@ make XXX_test XXX_test ...
 # Coding Style
 Please follow [PEP8](https://www.python.org/dev/peps/pep-0008/).
 
+# Autotools
+Statistic for violenting PEP8:
+`make pep8stat`
+Print the diff for the fixed sources:
+`make pep8diff`
+Discipline sources to follow PEP8:
+`make pep8replace`
+
 # Contribution
 Contributing is welcome, please use GitHub issue and Pull Request to contribute!
 Notice that you should follow the `coding style` and send PR to `dev/master branch`.
