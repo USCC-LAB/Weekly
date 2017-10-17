@@ -1,5 +1,5 @@
 import unittest
-from tests.testsuites.mail.dummy_mail.smtp_dummy import *
+from tests.testsuites.mail.smtp_dummy import *
 
 
 class MailTestcase(unittest.TestCase):

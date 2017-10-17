@@ -1,5 +1,5 @@
 from mail import mail
-from mail.smtp import smtp
+from mail.prot import smtp
 
 
 def smtp_dummy(acnt, pswd):
