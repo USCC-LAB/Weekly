@@ -2,10 +2,10 @@ import json
 
 
 class Json:
-    def serialize(data):
+    def dumps(data):
         if isinstance(data, dict):
             return json.dumps(data)
 
-    def deserialize(data):
+    def loads(data):
         if isinstance(data, str):
             return json.loads(data)

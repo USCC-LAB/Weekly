@@ -9,8 +9,8 @@ class Serializer:
     def setUp(self, serialize_obj):
         self.serialize_obj = serialize_obj
 
-    def serialize(self, data):
-        return self.serialize_obj.serialize(data)
+    def dumps(self, data):
+        return self.serialize_obj.dumps(data)
 
-    def deserialize(self, data):
-        return self.serialize_obj.deserialize(data)
+    def loads(self, data):
+        return self.serialize_obj.loads(data)

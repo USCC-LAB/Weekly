@@ -4,9 +4,9 @@ from serializer.json import json
 
 def json_serialize(dict_data):
     Serializer = serializer.Serializer(json.Json)
-    return Serializer.serialize(dict_data)
+    return Serializer.dumps(dict_data)
 
 
 def json_deserialize(raw_data):
     Serializer = serializer.Serializer(json.Json)
-    return Serializer.deserialize(raw_data)
+    return Serializer.loads(raw_data)
