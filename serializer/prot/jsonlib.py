@@ -12,3 +12,15 @@ class Json:
 
     def loads(self, data):
         return json.loads(data) if self.__isStr(data) else None
+
+    def write(self, path, data):
+        with open(path, 'w') as fd:
+            return json.dump(data, fd) if self.__isDict(data) else True
+
+    def read(self, path):
+        with open(path, 'r') as fd:
+            return json.load(fd)
+
+    def append(self, path, data):
+        with open(path, 'a') as fd:
+            return json.dump(data, fd) if self.__isDict(data) else True

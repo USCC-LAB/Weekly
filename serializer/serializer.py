@@ -14,3 +14,12 @@ class Serializer:
 
     def loads(self, data):
         return self.serialize_obj.loads(data)
+
+    def write(self, path, data):
+        return self.serialize_obj.write(path, data)
+
+    def read(self, data):
+        return self.serialize_obj.read(data)
+
+    def append(self, path, data):
+        return self.serialize_obj.append(path, data)
