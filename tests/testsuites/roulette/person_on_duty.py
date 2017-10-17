@@ -1,6 +1,7 @@
 from roulette import roulette
 from roulette.policy.shift import *
 
+
 def person_on_duty(cands):
     ret = True
     rl = roulette.Roulette(shift_policy, cands)

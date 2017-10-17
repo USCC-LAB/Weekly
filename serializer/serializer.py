@@ -5,7 +5,7 @@ class Serializer:
 
         # Initialization
         self.setUp(serialize_obj)
-    
+
     def setUp(self, serialize_obj):
         self.serialize_obj = serialize_obj
 

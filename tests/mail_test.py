@@ -1,6 +1,7 @@
 import unittest
 from tests.testsuites.mail.dummy_mail.smtp_dummy import *
 
+
 class MailTestcase(unittest.TestCase):
     def setUp(self):
         account = ''

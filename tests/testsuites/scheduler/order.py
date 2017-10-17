@@ -2,6 +2,7 @@ from scheduler import scheduler
 
 val, ret = None, None
 
+
 def assign(v):
     global val, ret
 
@@ -10,8 +11,9 @@ def assign(v):
     else:
         ret = False
     val = v
-    
-def iter_regist(iteration = 10):
+
+
+def iter_regist(iteration=10):
     global val, ret
 
     sc = scheduler.Scheduler()

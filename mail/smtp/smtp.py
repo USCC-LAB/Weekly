@@ -1,5 +1,6 @@
 import smtplib
 
+
 class Smtp:
     def __init__(self, *argv):
         # Declaration
@@ -19,7 +20,8 @@ class Smtp:
         self.__smtp_obj.login(account, passwd)
 
     def send(self, frm, to, subject, content):
-        self.__smtp_obj.sendmail(frm, to, 'Subject:' + subject + '\n' + content)
+        self.__smtp_obj.sendmail(
+            frm, to, 'Subject:' + subject + '\n' + content)
 
     def quit(self):
         self.__smtp_obj.quit()

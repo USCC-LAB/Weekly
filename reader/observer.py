@@ -1,5 +1,6 @@
 from smartcard.CardMonitoring import CardObserver
 
+
 class GenericObserver(CardObserver):
     def __init__(self):
         pass

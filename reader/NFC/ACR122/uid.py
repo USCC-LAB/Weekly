@@ -4,13 +4,14 @@ from smartcard.util import toHexString
 import sys
 from reader import observer
 
+
 class ReadUidObserver(observer.GenericObserver):
     def __init__(self):
         # Declaration
-        self.__cards = None # Inserted cards
+        self.__cards = None  # Inserted cards
 
         # Initialization
-        self.__cards = [] 
+        self.__cards = []
 
     def readUid(self, card):
         # follow http://downloads.acs.com.hk/drivers/en/API-ACR122U-2.02.pdf
@@ -21,7 +22,6 @@ class ReadUidObserver(observer.GenericObserver):
 
         resp, sw1, sw2 = card.connection.transmit(GETDATA)
         print('{0} {1:.2x} {2:.2x}'.format(resp, sw1, sw2))
-
 
     def insert_action(self, card):
         print('+Inserted: {0}'.format(toHexString(card.atr)))
