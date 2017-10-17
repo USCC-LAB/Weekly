@@ -1,9 +1,9 @@
 # Python
-PYTHON=python3
+PYTHON = python3
 
 # Repo
-SCRIPTS=scripts
-TEST=tests
+SCRIPTS = scripts
+TEST = tests
 
 # Control verbosity
 ifeq ("$(V)", "1")
