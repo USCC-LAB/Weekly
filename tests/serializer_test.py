@@ -7,9 +7,6 @@ class SerializationTestcase(unittest.TestCase):
         self.raw_data = "{\"name\":\"john\",\"age\":22,\"class\":\"mca\"}"
         self.dict_data = {'age': 22, 'class': 'mca', 'name': 'john'}
 
-        assert self.raw_data != ''
-        assert self.dict_data is not None
-
     def test_json_serialize(self):
         expected = self.raw_data
         result = json_serialize(self.dict_data)
