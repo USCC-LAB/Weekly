@@ -2,10 +2,13 @@ import json
 
 
 class Json:
-    def dumps(data):
-        if isinstance(data, dict):
-            return json.dumps(data)
+    def __init__(self):
+        # Helper functions
+        self.__isDict = lambda var: isinstance(var, dict)
+        self.__isStr = lambda var: isinstance(var, str)
 
-    def loads(data):
-        if isinstance(data, str):
-            return json.loads(data)
+    def dumps(self, data):
+        return json.dumps(data) if self.__isDict(data) else None
+
+    def loads(self, data):
+        return json.loads(data) if self.__isStr(data) else None
