@@ -16,6 +16,11 @@ class SerializationTestcase(unittest.TestCase):
     def test_json_serialize(self):
         expected = self.raw_data
         result = json_serialize(self.dict_data)
+        # XXX: Byte strings serialized from systems
+        #       is in alphabat order of keys. So in
+        #       this case, assertion will not pass.
+        #       That is, deserializing before comparison
+        #       is necessary.
         self.assertDictEqual(json_deserialize(
             expected), json_deserialize(result))
 
