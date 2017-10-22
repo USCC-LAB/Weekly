@@ -17,7 +17,7 @@ class SerializationTestcase(unittest.TestCase):
         expected = self.raw_data
         result = json_serialize(self.dict_data)
         # XXX: Byte strings serialized from systems
-        #       is in alphabat order of keys. So in
+        #       is in alphabetical order of keys. So in
         #       this case, assertion will not pass.
         #       That is, deserializing before comparison
         #       is necessary.
