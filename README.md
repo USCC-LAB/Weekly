@@ -46,3 +46,10 @@ Discipline sources to follow PEP8:
 # Contribution
 Contributing is welcome, please use GitHub issue and Pull Request to contribute!
 Notice that you should follow the `coding style` and send PR to `dev/master branch`.
+
+# For all administrators
+Forbid to force push on `master` and `dev/master` branch. Commit messages is such a 
+treasure for each project on Github. One of risks of force push is to rearrange all 
+commit messages if you use `git rebase`. It's possible to remove the merge notification
+message. We could retrieve lots of information from that kind of messages including 
+the number of PR merged and branch name for briefly introducing what this PR for.
