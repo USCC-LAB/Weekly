@@ -4,6 +4,7 @@ PYTHON = python3
 # Repo
 SCRIPTS = scripts
 TEST = tests
+DOCS = docs
 
 # Src
 SRCS = $(shell find -name "*.py")
@@ -43,3 +44,14 @@ pep8stat:
 
 pep8replace:
 	$(Q)autopep8 -j$(NPROC) --in-place --aggressive -a $(SRCS)
+
+# Rules for documentation
+
+dochelp:
+	$(Q)$(MAKE) -C $(DOCS) help
+
+dochtml:
+	$(Q)$(MAKE) -C $(DOCS) html
+
+doc%:
+	$(Q)$(MAKE) -C $(DOCS) $(patsubst doc%, %, $@)
