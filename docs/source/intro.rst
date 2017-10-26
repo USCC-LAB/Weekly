@@ -19,6 +19,23 @@ Here is also a training place for new members who access to our laboratory
 messages style. Don't be worry about that. Just send us a patch.
 We don't bite :)
 
+Documentation
+=============
+
+The current implementation is in pure python3.
+
+(... work in place)
+
+Coding style
+============
+
+Follow `PEP 8 -- Style Guide for Python Code <https://www.python.org/dev/peps/pep-0008/>`_.
+
+Moreover, there are some built-in tools to check coding style, analyse inconsistent terms with PEP8
+and format Python code to comform to PEP8 in place.
+
+By the way, we are pleasure to accept any features which could improve code quality.
+
 Contact us
 ==========
 - Current maintainer
