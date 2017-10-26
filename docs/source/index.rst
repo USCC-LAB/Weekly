@@ -10,7 +10,7 @@ Welcome to Weekly's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   intro.rst
 
 Indices and tables
 ==================
