@@ -26,6 +26,42 @@ The current implementation is in pure python3.
 
 (... work in place)
 
+Learn Python
+============
+
+Python
+------
+
+As I mentioned before, the primary implementation is in Python. So if you want to fix some bugs or work on new features,
+you should grasp basic operation of python. Here is a tutorial, `The Python Tutorial <https://docs.python.org/3/tutorial/>`_,
+written(mostly) by the author of the Python programming language, *Guido van Rossum*.
+
+If you're a non-native English reader and familiar with Traditional Chinese. You could start it by
+reading the slides or tutorials. As follows:
+
+- Tutorials
+    1. `Python 教學 <https://docs.python.org.tw/3/tutorial/>`_
+    2. `Python tutorial - CodeData <http://www.codedata.com.tw/python/python-tutorial-the-1st-class-1-preface>`
+- Slides
+    1. 《Python 3.5 技術手冊》投影片系列 `第 1 章 - Python 起步走<https://www.slideshare.net/JustinSDK/python-65068620>`_
+
+Despite all materials above, if you suggest others, please use **issues** or **PRs** to contribute.
+
+Nevertheless, the way to practice Python is important. It's convenient to examine your assume via
+`interactive shell of python interpreter <https://docs.python.org/2/tutorial/interpreter.html>`.
+However, in order to enhance efficiency, it's really powerful to use IPython and associate with Jupyter_ kernel as a note system which allows you execute python script commands in place. More details could be refered below.
+
+.. _IPython
+IPython
+-------
+    (... unfinished)
+
+.. _Jupyter:
+Jupyter
+-------
+    (... hang on the air)
+
+
 Contributor Guide
 =================
 
