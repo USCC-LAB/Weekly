@@ -206,3 +206,7 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 # Sphinx Theme for html
 #   Ref: https://github.com/rtfd/sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
+
+# Insert sys path
+import sys
+sys.path.insert(0, '..')

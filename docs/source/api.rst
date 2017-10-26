@@ -1,21 +1,7 @@
 .. _api
 
-H1
-**
+Mail
+====
 
-Yo
-
-H2
-==
-
-Yo
-
-H3
---
-
-Yo
-
-H4
-++
-
-Yo
+.. autoclass:: mail.mail.Mail
+    :members: __init__, login, send, quit

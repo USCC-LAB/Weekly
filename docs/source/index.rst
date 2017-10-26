@@ -12,6 +12,12 @@ Welcome to Weekly's documentation!
 
    intro.rst
 
+.. toctree::
+   :maxdepth: 2
+   :caption: API
+
+   api.rst
+
 Indices and tables
 ==================
 
