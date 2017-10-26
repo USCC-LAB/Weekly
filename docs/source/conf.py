@@ -207,6 +207,10 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 #   Ref: https://github.com/rtfd/sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
 
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+#
 # Insert sys path
-import sys
-sys.path.insert(0, '..')
+import sys, os
+sys.path.insert(0, os.path.abspath('../..'))
