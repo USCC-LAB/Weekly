@@ -13,9 +13,9 @@ class DB:
 	def insertStudent(self,dbname,table,sid,name,cardId):
 		self.__db.insertStudent(dbname,table,sid,name,cardId)
 
-	def checkIn(self,dbname,table,cardId): 
+	def checkIn(self,cardId): 
 		self.__db.checkIn(cardId)
 	
-	def checkOut(self,dbname,table,cardId): 
+	def checkOut(self,cardId): 
 		self.__db.checkOut(cardId)
 
