@@ -41,14 +41,14 @@ reading the slides or tutorials. As follows:
 
 - Tutorials
     1. `Python 教學 <https://docs.python.org.tw/3/tutorial/>`_
-    2. `Python tutorial - CodeData <http://www.codedata.com.tw/python/python-tutorial-the-1st-class-1-preface>`
+    2. `Python tutorial - CodeData <http://www.codedata.com.tw/python/python-tutorial-the-1st-class-1-preface>`_
 - Slides
-    1. 《Python 3.5 技術手冊》投影片系列 `第 1 章 - Python 起步走<https://www.slideshare.net/JustinSDK/python-65068620>`_
+    1. 《Python 3.5 技術手冊》投影片系列 `第 1 章 - Python 起步走 <https://www.slideshare.net/JustinSDK/python-65068620>`_
 
 Despite all materials above, if you suggest others, please use **issues** or **PRs** to contribute.
 
 Nevertheless, the way to practice Python is important. It's convenient to examine your assume via
-`interactive shell of python interpreter <https://docs.python.org/2/tutorial/interpreter.html>`.
+`interactive shell of python interpreter <https://docs.python.org/2/tutorial/interpreter.html>`_.
 However, in order to enhance efficiency, it's really powerful to use IPython and associate with Jupyter_ kernel as a note system which allows you execute python script commands in place. More details could be refered below.
 
 .. _IPython
