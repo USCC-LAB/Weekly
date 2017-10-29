@@ -24,7 +24,7 @@ Documentation
 
 The current implementation is in pure python3.
 
-(... work in place)
+(... work in progress)
 
 Learn Python
 ============
