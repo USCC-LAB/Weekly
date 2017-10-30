@@ -76,7 +76,7 @@ no one is worst. All of them are necessary for every open source project.
 As following:
 
 1. Post a message via `Issues <https://github.com/USCC-LAB/Weekly/issues>`_.
-This feature, **Issues**, is similiar with other project's trackers. It's
+This feature, **Issues**, is similar with other project's trackers. It's
 useful to keep track of issues you focus on.
     - Bug report
     - Feature request
