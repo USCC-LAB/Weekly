@@ -46,19 +46,51 @@ cmdMap = {
     "getuid": [0xFF, 0xCA, 0x00, 0x00, 0x00],
 }
 
+week_day = {
+    '0': "星期日",
+    '1': "星期一",
+    '2': "星期二",
+    '3': "星期三",
+    '4': "星期四",
+    '5': "星期五",
+    '6': "星期六"
+}
+
+inout = {
+    1 : "進",
+    9 : "出"
+}
+
 COMMAND = cmdMap.get(cmd, cmd)
 
 
 # member dictionary
 member = {}
+array = []
+
+class student():
+    """docstring for student"""
+
+    def __init__(self):
+        self.name = " "
+        self.uid = " "
+        self.Intime = 0
+        self.Outtime = 0
+        self.hour = 0
 
 
 def member():
 
     global member
+    global array
     member = {}
+    array = []
     with open('member.txt', 'r') as file:
         for kv in [line.strip().split('-') for line in file]:
+            tmp = student()
+            tmp.name = kv[1]
+            tmp.uid = kv[0]
+            array.append(tmp)
             member[kv[0]] = kv[1]
 
 # getuid
@@ -78,9 +110,11 @@ class getuidObserver(CardObserver):
         (addedcards, removedcards) = actions
 
         GETUID = [0xFF, 0xCA, 0x00, 0x00, 0x00]
+        week = datetime.now().strftime("%w")
 
         if addedcards:
-            print('Now at ' + datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+            print('Now at ' + datetime.now().strftime("%Y-%m-%d %H:%M:%S - ") + week_day[
+                                           week])
 
         for card in addedcards:
             card.connection = card.createConnection()
@@ -88,11 +122,54 @@ class getuidObserver(CardObserver):
             response, sw1, sw2 = card.connection.transmit(GETUID)
 
             if toHexString(response) in member:
-                print(member[toHexString(response)] + ', have a nice day.\n')
-                self.log.write(datetime.now().strftime(
-                    "%Y-%m-%d %H:%M:%S") + ' - ' + member[toHexString(response)] + '\n')
+                while (1):
+                    check = int(input("Checkin( 1 ) or Checkout( 9 ) ? : "))
+                    if (check == 1 or check == 9):
+                        if(check == 1):
+                            print('\n{0} success .'.format(
+                                'Checkin' if check != 9 else 'Checkout'))
+                            print(member[toHexString(response)] +
+                                  ', have a nice day.\n')
+                            for x in array:
+                                if(x.uid == toHexString(response)):
+                                    x.Intime = datetime.now()
+                            self.log.write(datetime.now().strftime("%Y-%m-%d %H:%M:%S ") + week_day[
+                                           week] + ' ' + member[toHexString(response)] + " " + inout[check] + '\n')
+                            break
+                        else:
+                            print('\n{0} success .'.format(
+                                'Checkin' if check != 9 else 'Checkout'))
+                            for y in array:
+                                if(y.uid == toHexString(response)):
+                                    y.Outtime = datetime.now()
+                                    y.hour = y.Outtime - y.Intime
+                                    slot = y.hour
+                                    H,rem = divmod(slot.seconds,3600)
+                                    M,_= divmod(rem,60)
+
+                            print(member[toHexString(response)] +
+                                  ', Good Bye !.\n') 
+
+                            s = datetime.now().strftime("%Y-%m-%d %H:%M:%S ") + \
+                                week_day[week] + ' ' + \
+                                member[toHexString(response)] + " " + \
+                                inout[check] + " " + \
+                                str(H) + 'hours:' + str(M) + 'minutes' +'\n'
+                            self.log.write(s)
+                            
+                            
+                            #test
+                            # for name in array:
+                            #     print(name.name)
+                            #     print(name.uid)
+                            #     print(name.Intime)
+                            #     print(name.Outtime)
+                            #     print(name.hour)
+                            break
+                    else:
+                        print("\nerror input ! \n")
             else:
-                print('Who are you!!!!\n')
+                print('Please try again !!!!\n')
 
 
 # main
@@ -122,7 +199,10 @@ elif type(COMMAND) == str:
     selectobserver = getuidObserver()
     cardmonitor.addObserver(selectobserver)
 
-    while True:
-        pass
-
-    cardmonitor.deleteObserver(selectobserver)
+    try:
+        while True:
+            pass
+    except KeyboardInterrupt:
+        cardmonitor.deleteObserver(selectobserver)
+        print("")
+        sys.exit()
