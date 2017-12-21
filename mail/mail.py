@@ -9,8 +9,8 @@ class Mail:
     def login(self, account, passwd):
         self.__prot.login(account, passwd)
 
-    def send(self, frm, to, subject, content):
-        self.__prot.send(frm, to, subject, content)
+    def send(self, frm, to, subject, content, attachments=None):
+        self.__prot.send(frm, to, subject, content, attachments)
 
     def quit(self):
         self.__prot.quit()
