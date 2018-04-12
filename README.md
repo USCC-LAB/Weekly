@@ -1,6 +1,10 @@
 # Weekly
 Automate weekly work.
 
+# Documentation
+
+Publish the [document](http://weekly.readthedocs.io/en/feature-docs/) onto [readthedoc](https://readthedocs.org/).
+
 # Requirement
 1. Python3
 
